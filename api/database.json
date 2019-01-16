@@ -1,28 +1,42 @@
 {
-    "places": [
-      { 
-        "id": 1, 
-        "name": "Hong Kong", 
-        "visa_required": false 
-      },
-      { 
-        "id": 2, 
-        "name": "Tokyo", 
-        "visa_required": false 
-      },
-      { 
-        "id": 3, 
-        "name": "Shanghai", 
-        "visa_required": true
-      }
-    ],
-    "interests": [
-        {
-        "name": "",
-        "description": "",
-        "cost": "",
-        "placesId": "",
-        "id": ""
-        }
-    ]
-  }
+  "places": [
+    {
+      "id": 1,
+      "name": "Hong Kong",
+      "visa_required": false
+    },
+    {
+      "id": 2,
+      "name": "Tokyo",
+      "visa_required": false
+    },
+    {
+      "id": 3,
+      "name": "Shanghai",
+      "visa_required": true
+    }
+  ],
+  "interests": [
+    {
+      "name": "",
+      "description": "",
+      "cost": "",
+      "placesId": "",
+      "id": ""
+    },
+    {
+      "name": "mmmmmmmmmm",
+      "description": "mmmmmmm",
+      "cost": "mmmmmmmmmm",
+      "places": "2",
+      "id": "y6tVDvC"
+    },
+    {
+      "name": "",
+      "description": "",
+      "cost": "",
+      "placeId": "1",
+      "id": "P2Y0JfR"
+    }
+  ]
+}

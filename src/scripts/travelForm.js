@@ -8,8 +8,8 @@ const travelForm = {
         <article>
         <h2>add your travle interest </h2>
             <section>
-                <label for="new-interest">Name:</label>
-                <input id="new-interest" name="new-interest" type="text" />
+                <label for="interestName">Name:</label>
+                <input id="interestName" name="new-interest" type="text" />
             </section>
             <section>
                 <label for="description">Description:</label>
@@ -35,6 +35,26 @@ const travelForm = {
             htmlOptionTag +=`<option value=${place.id}>${place.name}</option>`
             placesId.innerHTML=htmlOptionTag
         })})
-    }
+    let submitButton = document.createElement("button")
+    submitButton.textContent = "Add Interest"
+    submitButton.setAttribute("class", "interest")
+    outputArticle.appendChild(submitButton)
+    submitButton.addEventListener("click", travelForm.handleAddInterest)
+    },
+    handleAddInterest () {
+
+        let inputTravelInterestName = document.querySelector("#interestName").value
+        let inputTravelInterestDescription = document.querySelector("#description").value
+        let inputTravelInterestCost = document.querySelector("#cost").value
+        let inputTravelInterestPlace = document.querySelector("#placesId").value
+
+        let travelInterest = {
+          name: inputTravelInterestName,
+          description: inputTravelInterestDescription,
+          cost: inputTravelInterestCost,
+          placeId: inputTravelInterestPlace
+        }
+        travelFetch.postInterest(travelInterest)
+}
 }
 export default travelForm
