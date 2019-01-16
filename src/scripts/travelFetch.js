@@ -20,5 +20,19 @@ const travelFetch = {
         body: JSON.stringify(newArticleToSave)
       })
   },
+getPlaceOfInterest() {
+  return fetch("http://localhost:8088/places")
+.then(response => response.json())    
+.then(parcedPlaces => {
+    parcedPlaces.forEach(place => {       
+    let travelInterestName= `${place.name}`
+fetch(`http://localhost:8088/interests/${place.placesId}`)
+.then(response => response.json())    
+.then(parsedresponse => {
+     `${parsedresponse.name}`
+})
+})
+})
+}
 }
 export default travelFetch
