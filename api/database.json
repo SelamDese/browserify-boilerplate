@@ -1,4 +1,20 @@
 {
-    "places":[],
-    "interest":[]
-}
+    "places": [
+      { 
+        "id": 1, 
+        "name": "Hong Kong", 
+        "visa_required": false 
+      },
+      { 
+        "id": 2, 
+        "name": "Tokyo", 
+        "visa_required": false 
+      },
+      { 
+        "id": 3, 
+        "name": "Shanghai", 
+        "visa_required": true
+      }
+    ],
+    "interests": []
+  }
