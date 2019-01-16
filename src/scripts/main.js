@@ -1,3 +1,3 @@
 //
-import travleForm from "./travleForm.js"
-travleForm.createAndAppendForm()
+import travelForm from "./travelForm.js"
+travelForm.createAndAppendForm()
