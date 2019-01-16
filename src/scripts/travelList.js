@@ -5,13 +5,13 @@ const travelList = {
   addTravelToInterestList(){
     travelFetch.getAllInterest()
     .then(interestsArray => {
-      let foodDocFragment = document.createDocumentFragment()
+      let travelInterestDocFragment = document.createDocumentFragment()
       interestsArray.forEach(interest => {
         let travelInterestHtml = travelCreateObject.travleInterestBuilder(interest)
-        foodDocFragment.appendChild(travelInterestHtml)
+        travelInterestDocFragment.appendChild(travelInterestHtml)
       })
       let outputArticle = document.querySelector(".output")
-      outputArticle.appendChild(foodDocFragment)
+      outputArticle.appendChild(travelInterestDocFragment)
 
     })
   }
