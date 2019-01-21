@@ -8,31 +8,41 @@ const travelFetch = {
     getAllInterest() {
         // GET
     return fetch("http://localhost:8088/interests")
+    // /?_expand=places
     .then(response => response.json())
   },
   // POST
-  postInterest(newArticleToSave) {
+    postInterest(newinterestToSave) {
       return fetch("http://localhost:8088/interests", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(newArticleToSave)
+        body: JSON.stringify(newinterestToSave)
       })
   },
-getPlaceOfInterest() {
-  return fetch("http://localhost:8088/places")
-.then(response => response.json())    
-.then(parcedPlaces => {
-    parcedPlaces.forEach(place => {       
-    let travelInterestName= `${place.name}`
-fetch(`http://localhost:8088/interests/${place.placesId}`)
-.then(response => response.json())    
-.then(parsedresponse => {
-     `${parsedresponse.name}`
-})
-})
-})
+  // delete
+    deleteInterest(interestsId) {
+    return fetch(`http://localhost:8088/interests/${interestsId}`, {
+      method: "DELETE",
+      headers: {
+          "Content-Type": "application/json"
+      }
+    })
+  },
+  //
+    getInterest(interestsId) {
+    return fetch(`http://localhost:8088/interests/${interestsId}`)
+    .then(response => response.json())
+  },
+    putExistingInterest(interestsId, interestToEdit) {
+    return fetch(`http://localhost:8088/interests/${interestsId}`, {
+      method: "PATCH",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(interestToEdit)
+    })
 }
 }
 export default travelFetch

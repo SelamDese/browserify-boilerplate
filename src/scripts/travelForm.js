@@ -1,5 +1,7 @@
 // this module creates and appends travle interest input form
 import travelFetch from "./travelFetch"
+import travelList from "./travelList"
+
 const travelForm = {
     createAndAppendForm() {
         // create input form
@@ -30,7 +32,6 @@ const travelForm = {
     let placesId=document.querySelector("#placesId")
     travelFetch.getAllPlaces()
     .then(arrayofPlaces=>{
-        console.log(arrayofPlaces)
         arrayofPlaces.forEach(place => {
             htmlOptionTag +=`<option value=${place.id}>${place.name}</option>`
             placesId.innerHTML=htmlOptionTag
@@ -52,9 +53,13 @@ const travelForm = {
           name: inputTravelInterestName,
           description: inputTravelInterestDescription,
           cost: inputTravelInterestCost,
-          placeId: inputTravelInterestPlace
+          placeId: inputTravelInterestPlace,
+          review: ""
         }
         travelFetch.postInterest(travelInterest)
+        .then(response => {
+        travelList.addTravelToInterestList()
+        })
 }
 }
 export default travelForm

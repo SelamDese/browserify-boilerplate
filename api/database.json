@@ -18,18 +18,12 @@
   ],
   "interests": [
     {
-      "name": "",
-      "description": "",
-      "cost": "",
-      "placesId": "",
-      "id": ""
-    },
-    {
-      "name": "",
-      "description": "",
-      "cost": "",
-      "placeId": "1",
-      "id": "P2Y0JfR"
+      "name": "test2",
+      "description": "test2",
+      "cost": "88",
+      "placeId": "3",
+      "review": "review",
+      "id": 3
     }
   ]
 }
