@@ -2,7 +2,7 @@ import travelFetch from "./travelFetch"
 import travelCreateObject from "./travelCreateObject"
 
 const travelList = {
-  addTravelToInterestList(){
+  addTravelToInterestList() {
     travelFetch.getAllInterest()
     .then(interestsArray => {
       let travelInterestDocFragment = document.createDocumentFragment()
@@ -10,9 +10,11 @@ const travelList = {
         let travelInterestHtml = travelCreateObject.travleInterestBuilder(interest)
         travelInterestDocFragment.appendChild(travelInterestHtml)
       })
-      let outputArticle = document.querySelector(".output")
-      outputArticle.appendChild(travelInterestDocFragment)
-
+      let outputArticle2 = document.querySelector(".output2")
+      while (outputArticle2.firstChild) {
+        outputArticle2.removeChild(outputArticle2.firstChild);
+      }
+      outputArticle2.appendChild(travelInterestDocFragment)
     })
   }
 }
